@@ -1,0 +1,16 @@
+{
+  "name": "crud-api-pure-node",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch src/server.js"
+  },
+  "engines": {
+    "node": "20.16.0"
+  },
+  "keywords": [],
+  "author": "Carlos Daniel",
+  "license": "ISC",
+  "description": "Api com CRUD simples utilizando nodejs o mais puro posssível"
+}
