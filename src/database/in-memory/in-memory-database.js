@@ -36,7 +36,7 @@ export class InMemoryDatabase {
     if (search) {
       data = data.filter((row) => {
         return Object.entries(search).some(([key, value]) => {
-          return row[key].includes(value);
+          return row[key] === value;
         });
       });
     }
