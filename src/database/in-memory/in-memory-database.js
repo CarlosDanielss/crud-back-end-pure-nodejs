@@ -43,4 +43,17 @@ export class InMemoryDatabase {
 
     return data;
   }
+
+  update(table, id, data) {
+    const rowIndex = this.#database[table].findIndex((row) => row.id === id);
+
+    const existingRow = this.#database[table][rowIndex];
+
+    const updateRow = { ...existingRow, ...data };
+
+    this.#database[table][rowIndex] = updateRow;
+    this.#persist();
+    
+    return updateRow;
+  }
 }
