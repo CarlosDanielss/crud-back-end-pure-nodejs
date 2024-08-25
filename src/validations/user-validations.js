@@ -3,7 +3,7 @@ export class UserValidations {
     const regex = /^([a-zA-Zç~^`´]+(?:\s[a-zA-Zç~^`´]+)*)$/;
     const adjustedName = name.toLowerCase().trim();
     return {
-      value: adjustedName,
+      name: adjustedName,
       isValid: regex.test(adjustedName),
     };
   }
@@ -12,7 +12,7 @@ export class UserValidations {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const adjustedEmail = email.trim();
     return {
-      value: adjustedEmail,
+      email: adjustedEmail,
       isValid: regex.test(adjustedEmail),
     };
   }
@@ -22,7 +22,7 @@ export class UserValidations {
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%*.;:?])[a-zA-Z\d!@#$%*.;:?]{8,20}$/;
     const adjustedPassword = password.trim();
     return {
-      value: adjustedPassword,
+      password: adjustedPassword,
       isValid: regex.test(adjustedPassword),
     };
   }
