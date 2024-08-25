@@ -12,4 +12,8 @@ export async function toJson(req, res) {
   }
 
   res.setHeader("Content-type", "application/json");
+
+  res.message = (data) => {
+    res.end(JSON.stringify(data));
+  };
 }
