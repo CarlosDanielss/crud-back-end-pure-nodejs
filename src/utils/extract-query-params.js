@@ -4,9 +4,10 @@ export function extractQueryParams(query) {
     .split("&")
     .reduce((queryParams, param) => {
       const [key, value] = param.split("=");
+      const addSpace = value.replace("%20", " ");
 
-      queryParams[key] = value;
+      queryParams[key] = addSpace;
 
       return queryParams;
-    });
+    }, {});
 }
