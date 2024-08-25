@@ -1,8 +1,6 @@
 import { ContentNotFound } from "../errors/content-not-found.js";
 
-import { InMemoryDatabase } from "../database/in-memory/in-memory-database.js";
-
-const database = new InMemoryDatabase();
+import { database } from "../database/database.js";
 
 export function readUserUseCase(query) {
   const usersSearch = database.select("users", query);
