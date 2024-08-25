@@ -6,35 +6,31 @@ import { AlreadyExist } from "../errors/already-exist-error.js";
 
 export async function createUserController(req, res) {
   try {
-    const { name, email, password } = req.body;
+    const data = req.body;
 
-    const fields = [name, email, password];
+    const fields = ["name", "email", "password"];
 
     for (const field of fields) {
-      if (field === undefined || field === "") {
+      if (data[field] === undefined || data[field] === "") {
         return res
           .writeHead(400)
           .end("Alguns campos necessários não foram enviados.");
       }
     }
 
-    const userSchema = [
-      UserValidations.name(name),
-      UserValidations.email(email),
-      UserValidations.password(password),
-    ];
+    const validatedData = {};
 
-    for (const field of userSchema) {
-      if (!field.isValid) {
-        return res.writeHead(400).end("Alguns campos são inválidos.");
+    for (const field of fields) {
+      const check = UserValidations[field](data[field]);
+
+      if (!check.isValid) {
+        return res.writeHead(400).end(`O campo ${field} é inválido`);
       }
+
+      validatedData[field] = check[field];
     }
 
-    const result = await createUserUseCase({
-      name: userSchema[0].value,
-      email: userSchema[1].value,
-      password: userSchema[2].value,
-    });
+    const result = await createUserUseCase(validatedData);
 
     if (result instanceof AlreadyExist) {
       return res.writeHead(result.statusCode).end(result.message);
