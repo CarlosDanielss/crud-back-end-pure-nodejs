@@ -53,7 +53,15 @@ export class InMemoryDatabase {
 
     this.#database[table][rowIndex] = updateRow;
     this.#persist();
-    
+
     return updateRow;
+  }
+
+  delete(table, id) {
+    const rowindex = this.#database[table].findIndex((row) => row.id === id);
+
+    this.#database[table].splice(rowindex, 1);
+
+    this.#persist();
   }
 }
