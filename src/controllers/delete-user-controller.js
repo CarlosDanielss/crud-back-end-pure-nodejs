@@ -1,4 +1,5 @@
 import { ContentNotFound } from "../errors/content-not-found.js";
+
 import { deleteUserUseCase } from "../use-cases/delete-user-use-case.js";
 
 export async function deleteUserController(req, res) {
