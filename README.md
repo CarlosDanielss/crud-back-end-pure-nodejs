@@ -1,4 +1,4 @@
-# CRUD API PURE NODEJS
+# CRUD BACK-END PURE NODEJS
 
 <img width="280" src="https://samory.sistemasresponsivos.com.br/wp-content/uploads/2022/04/1200px-Node.js_logo.svg_.png" />
 
@@ -12,7 +12,7 @@
 
 ## Sobre o Projeto
 
-O projeto é basicamente uma API construída em Node.js que implementa um CRUD utilizando exclusivamente as funcionalidades nativas do próprio Node.js, sem a instalação de bibliotecas externas. O projeto inclui alguns testes unitários e um banco de dados em memória, que pode ser facilmente adaptado para outro banco de dados, caso necessário.
+O projeto é basicamente um back-end construído em Node.js que implementa um CRUD utilizando exclusivamente as funcionalidades nativas do próprio Node.js, sem a instalação de bibliotecas externas. O projeto inclui alguns testes unitários e um banco de dados em memória, que pode ser facilmente adaptado para outro banco de dados, caso necessário.
 
 ## Stack Utilizada
 
